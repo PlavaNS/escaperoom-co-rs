@@ -27,6 +27,7 @@ Public HTML verification confirms one GA4 configuration per page, the Ads base t
 - The obsolete `7 igrača - 7.500 RSD` price was removed from the birthday page and both active FAQ schemas; a full published-content and WPCode scan is clean.
 - Seven legacy English duplicate URLs now return exact 301 redirects to their canonical `/en/` pages and are removed from the page sitemap.
 - All 26 indexed pages pass the automated check for HTTP 200, SEO title, meta description, canonical URL, and exactly one H1.
+- Serbian game pages use the game name as H1 instead of `CENOVNIK`; affected English meta descriptions were corrected.
 
 ## Performance cleanup
 
