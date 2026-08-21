@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Door 404 Site Tools
  * Description: Small, site-specific SEO and content improvements for escaperoom.co.rs.
- * Version: 0.1.0
+ * Version: 0.2.0
  * Author: Door 404
  */
 
@@ -77,3 +77,23 @@ function door404_print_content_hub_styles() {
 	<?php
 }
 add_action( 'wp_head', 'door404_print_content_hub_styles', 30 );
+
+/**
+ * Remove the obsolete seven-player price restored by an older backup.
+ *
+ * The match is deliberately limited to the birthday page and the exact price
+ * row, so unrelated prices and page markup are left untouched.
+ *
+ * @param string $content Rendered page content.
+ * @return string
+ */
+function door404_remove_obsolete_seven_player_price( $content ) {
+	if ( ! is_page( 'proslava-rodjendana' ) || false === stripos( $content, '7.500' ) ) {
+		return $content;
+	}
+
+	$pattern = '~<p[^>]*>\s*<strong[^>]*>\s*7\s*</strong>\s*IGRAČA\s*-\s*<strong[^>]*>\s*7(?:\.|\s)500\s*</strong>\s*<strong[^>]*>\s*RSD\s*</strong>\s*</p>~iu';
+
+	return preg_replace( $pattern, '', $content );
+}
+add_filter( 'the_content', 'door404_remove_obsolete_seven_player_price', 20 );
