@@ -24,5 +24,12 @@ Public HTML verification confirms one GA4 configuration per page, the Ads base t
 - `/vauceri/`, `/potraga-za-blagom/`, and `/kutija-izgubljenih-legendi/` have explicit Serbian SEO titles.
 - `/category/saveti-i-ideje/` returns HTTP 200 and is listed in the category sitemap.
 - `/sta-je-escape-room-vodic-za-pocetnike/` returns HTTP 200 and is listed in the post sitemap.
+- The obsolete `7 igrača - 7.500 RSD` price was removed from the birthday page and both active FAQ schemas; a full published-content and WPCode scan is clean.
+
+## Performance cleanup
+
+- Disabled the redundant delayed Trustindex loader; the official plugin loader remains active.
+- Disabled the ineffective legacy Trustindex shortcode helper.
+- Fresh public HTML contains one official loader and no legacy helper code.
 
 Do not place passwords, application passwords, cookies, database exports, or private customer data in this repository.
