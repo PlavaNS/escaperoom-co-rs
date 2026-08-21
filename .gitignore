@@ -1,0 +1,34 @@
+# Secrets and environment
+.env
+.env.*
+!.env.example
+wp-config.php
+*.pem
+*.key
+
+# Database and backups
+*.sql
+*.sql.gz
+*.zip
+*.tar
+*.tar.gz
+*.bak
+backups/
+
+# WordPress runtime data
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup*/
+wp-content/ai1wm-backups/
+wp-content/litespeed/
+*.log
+debug.log
+
+# Dependencies and local tooling
+node_modules/
+vendor/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
